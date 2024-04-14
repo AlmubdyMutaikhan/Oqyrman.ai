@@ -48,14 +48,16 @@
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
-    background: rgb(0, 0, 0);
+    background: rgb(220, 210, 191);
     transition: background-color 0.3s;
+    color: black;
   }
   
   .option-button.selected,
   .true-false-button:hover,
   .submit-button:hover {
-    background: #bcd;
+    background: rgb(1, 145, 189);
+    color: white;
   }
   
   .submit-button {
