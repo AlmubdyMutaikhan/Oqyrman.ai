@@ -39,6 +39,7 @@ cd oqyrman-ai
 
 ```sh
 npm install
+```
 ```sh
 npm start
 ```
