@@ -1,0 +1,83 @@
+.levels-table {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    color: black;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.1); /* Adjust white background transparency for glass effect */
+  backdrop-filter: blur(10px) !important;  /* This creates the blur effect */ 
+  -webkit-backdrop-filter: blur(10px) !important; /* For Safari browser compatibility */
+
+    .levels-title {
+      margin-bottom: 20px;
+    }
+  
+    .levels-row {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      margin-bottom: 20px;
+  
+      .trophy-icon {
+        // Add styling for your trophy icon here
+      }
+    }
+  
+    .levels-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      gap: 15px;
+      width: 100%;
+      
+  
+      .level-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 15px;
+        gap: 12px;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.538); // Adjust transparency for glass effect
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+  
+        &:hover {
+          transform: translateY(-5px);
+        }
+  
+        &.locked {
+          // Style for locked levels
+          opacity: 0.5;
+          background: rgba(0, 0, 0, 0.5); // Darker background for locked levels
+        }
+      }
+    }
+
+    
+    .levelTypeMedium {
+      color: white;
+      background: #b59515bc; 
+      border-radius: 8px;
+      padding: 4px 8px;
+  }
+  .levelTypeMedium {
+    color: white;
+    background: #5d0b86bc; 
+    border-radius: 8px;
+    padding: 4px 8px;
+}
+  .levelType {
+    color: white;
+    background: #32ae8bbc; 
+    border-radius: 8px;
+    padding: 4px 8px;
+}
+
+  }
+  

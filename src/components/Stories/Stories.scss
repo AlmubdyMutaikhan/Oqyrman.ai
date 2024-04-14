@@ -1,0 +1,50 @@
+.stories-container {
+    display: flex;
+    overflow-x: auto;
+    padding: 10px;
+    gap: 10px;
+    scroll-snap-type: x mandatory;
+  
+    &::-webkit-scrollbar {
+      display: none; // Hide scrollbar for webkit browsers
+    }
+  }
+  
+  .story {
+    flex: 0 0 auto; // Do not grow, do not shrink, and base width on content
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    scroll-snap-align: start;
+  
+    .story-image {
+      width: 60px; // Adjust as needed
+      height: 60px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 2px solid teal; // Color for the border
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  
+    .story-label {
+      margin-top: 5px;
+      font-size: 0.75rem; // Adjust as needed
+    }
+
+    .story__modal {
+        position: fixed;
+        z-index: 999;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+    }
+  }
+  

@@ -1,0 +1,100 @@
+.learning-module {
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    position: relative;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    margin-bottom: 160px;
+  }
+
+  .tabs {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .tab {
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+    border: none;
+    color: black;
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+  }
+  
+  .tab.active {
+    background: rgba(255, 255, 255, 0.8);
+  }
+  
+  .quizzes {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 20px;
+    padding: 0 20px;
+  }
+  
+  .quiz-button {
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    border: none;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    cursor: pointer;
+    transition: transform 0.3s;
+  }
+  
+  .quiz-button:hover {
+    transform: scale(1.05);
+  }
+  
+  .easy {
+    /* Your styles for the 'easy' quiz button */
+  }
+  
+  /* Add more styles for different quiz difficulties if needed */
+ 
+  .content-area {
+    /* Style for the content area below the tabs */
+    margin-top: 20px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    width: 100%;
+    height: auto;
+    .audio-background {
+      background: url('https://firebasestorage.googleapis.com/v0/b/bee-volunteers.appspot.com/o/etik.jpg?alt=media&token=630aecf1-6ee6-414b-b9c7-02fb3c22a998');
+      background-size: cover;
+      background-position: center;
+      min-height: 400px;
+      height: auto;
+      width: 100%;
+    }
+
+  }
+  
+  .read-content {
+    /* Style for the text content when 'Read' tab is active */
+    color: #000; /* Choose a color that fits your design */
+    font-size: 16px; /* Adjust the font size as needed */
+    text-align: justify; /* Optional: for better readability */
+    display: flex;
+    justify-content: center;
+    height: auto;
+    width: 100%;
+    word-break: break-all;
+  }
+  
+  .audio-player {
+    width: 100%; /* Make the audio player span the full width of the content area */
+    /* Additional styles for the audio player if needed */
+  }

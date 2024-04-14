@@ -1,0 +1,66 @@
+
+  // TODO: Move colors to sass file variables
+  
+  .auth-form-fields {
+      background: #32ae8b; 
+      padding: 2rem;
+      width: 130%; // KOSTYL
+      height: 100%;
+
+      label {
+        color: white; // White text color for the labels
+        display: block;
+        margin-bottom: 0.5rem;
+      }
+  
+      input[type="text"],
+      input[type="email"],
+      input[type="password"] {
+        background: transparent;
+        border: none;
+        outline: none;
+        color: #FFFFFF;
+        border: 1px solid white;
+        border-radius: 8px;
+        padding: 8px;
+        margin-bottom: 1rem; // Space between input fields
+        width: 100%;
+        box-sizing: border-box; // Include padding in width
+        font-size: 1rem;
+      }
+  
+      .auth-form-fields__tos {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1rem; // Space below the checkbox
+  
+        input[type="checkbox"] {
+          margin-right: 0.5rem; // Space between checkbox and label
+        }
+  
+        label {
+          margin-bottom: 0; // No margin below label here
+          font-size: 0.875rem;
+        }
+      }
+
+      .auth-form-fields__submit {
+        border: none;
+        border-radius: 0.5rem;
+        padding: 0.75rem;
+        width: 100%;
+        font-size: 1rem;
+        color: #949494;
+        width: 100%;
+        background: #FFFFFF;
+        display: flex;
+        transition: 0.2s ease-in-out;
+        text-align: center;
+        justify-content: center;
+        &:hover {
+          color: white;
+          background-color: #40C9A2; // Darken the button on hover
+        }
+      }
+    }
+  

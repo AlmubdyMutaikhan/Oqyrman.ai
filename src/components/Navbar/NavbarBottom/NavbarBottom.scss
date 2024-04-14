@@ -1,0 +1,38 @@
+// BottomNavbar.scss
+.bottom-navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff; // Assuming white background
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1); // Optional shadow for a "lifted" look
+    padding: 10px 0;
+    
+    .nav-item.active {
+        color: #32ae8b;
+    }
+
+    .nav-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-decoration: none;
+      color: #333; // A color that contrasts with the background
+        
+      &:hover {
+            color: #32ae8b;
+        }
+      i {
+        font-size: 24px; // Use your preferred icon font or replace with images
+      }
+  
+      span {
+        font-size: 12px;
+        margin-top: 4px;
+      }
+    }
+  }
+  

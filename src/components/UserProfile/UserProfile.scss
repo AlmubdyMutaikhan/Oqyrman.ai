@@ -1,0 +1,54 @@
+.user-profile {
+    background-color: #f9f9f9;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 120px;
+  }
+  
+  .profile-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .profile-pic {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+  }
+  
+  .username {
+    font-size: 18px;
+    color: #333;
+  }
+  
+  .design-button {
+    background-color: #8ae9c1; /* Customize the color */
+    border: none;
+    padding: 5px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+  
+  .progress-chart {
+    margin: 20px 0;
+  }
+  
+  /* Add styles for navigation and sign out button similar to your design */
+  .navigation {
+    /* ... */
+  }
+  
+  .signout-button {
+    background-color: #DC3545; /* Customize the color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 12px;
+    float: right;
+  }
+  

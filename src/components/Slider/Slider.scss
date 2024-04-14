@@ -1,0 +1,24 @@
+
+.slider-container {
+    padding-top: 24px;
+    padding-left: 12px;
+    padding-bottom: 12px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+
+    .silder__headline {
+        font-size: 2em;
+        padding: 0 4px;
+    }
+
+    .slider__carousel {
+        min-height: 90%;
+        width: 100%;
+        overflow-x: scroll;
+        display: flex;
+        gap: 20px;
+        padding-bottom: 12px;
+    }
+}

@@ -1,0 +1,16 @@
+.render-content {
+    line-break: anywhere; /* This will ensure that the text breaks properly */
+    cursor: pointer; /* Indicates that the words are clickable */
+  }
+  
+  .word {
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .word.selected {
+    padding: 2px 4px;
+    border-radius: 4px;
+    background-color: #32ae8bbc;
+    color: white;
+  }
+  

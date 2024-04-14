@@ -1,0 +1,45 @@
+.thread-form {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    align-items: center;
+    justify-content: center;
+  
+    .thread-form__headline {
+        padding: 12px 16px;
+        padding-top: 0px;
+        padding-bottom: 16px;
+    }
+    label {
+      margin-bottom: 0.5rem;
+    }
+  
+    input[type="file"] {
+      margin-bottom: 1rem;
+    }
+  
+    .image-preview {
+      max-width: 100px; // Adjust based on your design requirements
+      margin-bottom: 1rem;
+    }
+  
+    input[type="text"], textarea, select {
+      width: 100%;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 0.25rem;
+    }
+  
+    button {
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 0.25rem;
+      cursor: pointer;
+        width: 100%;
+      &:hover {
+        background-color: #32ae8b;
+      }
+    }
+  }
+  
