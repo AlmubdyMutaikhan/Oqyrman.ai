@@ -5,7 +5,7 @@ import useAuthStore from '../stores/useAuthStore';
 const AuthRoute = ({ children }) => {
   const isAuthenticated = useAuthStore(state => state.isAuthenticated);
   if (isAuthenticated) {
-    return <Navigate to="/dashboard" replace />;
+    return <Navigate to="/" replace />;
   }
 
   return children;

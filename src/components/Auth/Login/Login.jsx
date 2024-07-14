@@ -21,7 +21,7 @@ const Login = () => {
     console.log(ok);
     if (ok) {
       toast.success(t('okLogin'));
-      navigate('/dashboard'); 
+      navigate('/'); 
     } else {
       toast.error(t('nokLogin'));
     }

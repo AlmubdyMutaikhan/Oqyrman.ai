@@ -13,7 +13,7 @@ const NavbarBottom = () => {
   }));
 
   const navbarItems = [
-    { name: 'Main', icon: faHome, route: '/dashboard' },
+    { name: 'Main', icon: faHome, route: '/' },
     { name: 'Bookshelf', icon: faBook, route: '/bookshelf' },
     { name: 'Forum', icon: faUsers, route: '/threads' },
     { name: 'MyProfile', icon: faUser, route: '/profile' },

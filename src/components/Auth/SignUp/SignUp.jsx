@@ -25,7 +25,7 @@ const SignUp = () => {
     console.log(ok);
     if (ok) {
       toast.success(t('okSignup'));
-      navigate('/dashboard'); 
+      navigate('/'); 
     } else {
       toast.error(t('nokSignup'));
     }

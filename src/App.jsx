@@ -28,18 +28,18 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home />} />
+        {/* <Route path="/" element={<Home />} /> */}
+        <Route path="/" element={
+          <ProtectedRoute>
+            <Dashboard />
+          </ProtectedRoute>
+        } />
         <Route path="/login" element={<AuthRoute>
             <Login />
           </AuthRoute>} />
         <Route path="/signup" element={<AuthRoute>
             <SignUp />
           </AuthRoute>} />
-        <Route path="/dashboard" element={
-          <ProtectedRoute>
-            <Dashboard />
-          </ProtectedRoute>
-        } />
         <Route path="/bookshelf" element={
           <ProtectedRoute>
             <BookShelf />
