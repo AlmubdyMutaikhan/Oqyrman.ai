@@ -40,14 +40,14 @@ const Landscape = () => {
 
 
   const waterAnimation = useSpring({
-    from: { transform: 'translate3d(-150%, 100%, 0)' }, // Start from the left-bottom
-    to: { transform: 'translate3d(150%, -100%, 0)' },  // Move to the right-top
+    from: { transform: 'translate3d(-150%, 100%, 0)' },
+    to: { transform: 'translate3d(150%, -100%, 0)' }, 
     config: { duration: 1000 },
-    reset: true,   // Reset the animation state to `from` on completion
+    reset: true,   
     onRest: ({ finished }) => {
-      // This callback fires when the animation comes to a still-stand
+     
       if (finished) {
-        // Flip the `reverse` flag to toggle the direction of the animation
+        
         waterAnimation.reverse = !waterAnimation.reverse;
       }
     }
@@ -59,13 +59,13 @@ const Landscape = () => {
     config: { duration: 2000 },
   });
 
-  // Define fixed positions and scales
+
   const trees = [
-    { id: 1, xOffset: 5, scale: 2.5,z: 100 },  // Larger scale, closer to the viewer
+    { id: 1, xOffset: 5, scale: 2.5,z: 100 }, 
     { id: 2, xOffset: 85, scale: 2.2, z: 99 },
     { id: 3, xOffset: 85, scale: 1.6, z: 98 },
     { id: 4, xOffset: 75, scale: 2.1, z:98 },
-    { id: 5, xOffset: 20, scale: 1.2, z:95 }, // Smaller scale, farther from the viewer
+    { id: 5, xOffset: 20, scale: 1.2, z:95 }, 
     { id: 6, xOffset: 5, scale: 1.1, z: 90 },
     { id: 7, xOffset: 80, scale: 1.2, z: 97 },
     { id: 8, xOffset: 10, scale: 0.5, z:85 }
@@ -73,12 +73,12 @@ const Landscape = () => {
 
   function getBottomPosition(scale) {
     if (scale > 2) {
-      return 150 + (2.5 - scale) * 100; // Closer trees, lower bottom position
+      return 150 + (2.5 - scale) * 100; 
     } else if(scale > 1.5) {
         return 190 + (2.5 - scale) * 100; 
     }
     else if(scale > 1){
-      return 300; // Farther trees, higher bottom position
+      return 300; 
     } 
     return 350;
   }
@@ -91,7 +91,7 @@ const Landscape = () => {
     config: { duration: 1000 },
     reset: true,
     onRest: (result, ctrl, item) => {
-      if (item === 0) {  // Check if the first item in the trail has finished animating
+      if (item === 0) { 
         waterApi.start({
           reverse: !ctrl.reverse,
           immediate: false
