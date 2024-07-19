@@ -27,22 +27,26 @@ function LanguageSelector() {
   const currentLanguageCode = i18n.language;
   const currentLanguage = languages[currentLanguageCode];
 
+  if (!currentLanguage) {
+    return null;
+  }
+
   return (
-    <div className="language-dropdown-container">
-      <div className="dropdown">
-        <button className="dropbtn">
-          <img src={currentLanguage.flag} alt={currentLanguage.name} style={{ width: '20px', marginRight: '8px' }} />
-        </button>
-        <div className="dropdown-content">
-          {Object.entries(languages).map(([code, { name, flag }]) => (
-            <button key={code} onClick={() => changeLanguage(code)} style={{ background: 'none', border: 'none', width: '100%' }}>
-              <img src={flag} alt={name} style={{ width: '20px', marginRight: '8px' }} />
-              {name}
-            </button>
-          ))}
+      <div className="language-dropdown-container">
+        <div className="dropdown">
+          <button className="dropbtn">
+            <img src={currentLanguage.flag} alt={currentLanguage.name} style={{ width: '20px', marginRight: '8px' }} />
+          </button>
+          <div className="dropdown-content">
+            {Object.entries(languages).map(([code, { name, flag }]) => (
+                <button key={code} onClick={() => changeLanguage(code)} style={{ background: 'none', border: 'none', width: '100%' }}>
+                  <img src={flag} alt={name} style={{ width: '20px', marginRight: '8px' }} />
+                  {name}
+                </button>
+            ))}
+          </div>
         </div>
       </div>
-    </div>
   );
 }
 

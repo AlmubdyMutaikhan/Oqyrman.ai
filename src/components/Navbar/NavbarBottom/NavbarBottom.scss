@@ -1,5 +1,6 @@
 // BottomNavbar.scss
 .bottom-navbar {
+    z-index: 999999999;
     display: flex;
     justify-content: space-around;
     align-items: center;

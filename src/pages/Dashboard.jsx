@@ -1,5 +1,6 @@
 import BookCard from "../components/Card/Card";
 import Divider from "../components/Divider/Divider";
+import Landscape from "../components/Landscape/Landscape";
 import NavbarBottom from "../components/Navbar/NavbarBottom/NavbarBottom";
 import NavbarTop from "../components/Navbar/NavbarTop/NavbarTop"
 import BookSlider from "../components/Slider/BookSlider";
@@ -10,11 +11,12 @@ const Dashboard = () => {
     return (
         <>
             <NavbarTop />
-            <Stories />
+            {/* <Stories />
             <Divider />
             <BookSlider />
             <Divider />
-            <FactsSlider />
+            <FactsSlider /> */}
+            <Landscape />
             <NavbarBottom />
         </>
     )

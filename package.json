@@ -13,6 +13,9 @@
     "@daily-co/daily-js": "^0.62.0",
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
+    "@react-spring/web": "^9.7.3",
+    "@react-three/drei": "^9.108.4",
+    "@react-three/fiber": "^8.16.8",
     "axios": "^1.6.8",
     "i18next": "^23.11.1",
     "i18next-browser-languagedetector": "^7.2.1",
@@ -29,6 +32,7 @@
     "redux-thunk": "^3.1.0",
     "stories-react": "^1.1.2",
     "styled-components": "^6.1.8",
+    "three": "^0.166.1",
     "zustand": "^4.5.2"
   },
   "devDependencies": {
