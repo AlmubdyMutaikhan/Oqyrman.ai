@@ -33,6 +33,7 @@
     "stories-react": "^1.1.2",
     "styled-components": "^6.1.8",
     "three": "^0.166.1",
+    "use-sound": "^4.0.3",
     "zustand": "^4.5.2"
   },
   "devDependencies": {
