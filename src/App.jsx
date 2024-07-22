@@ -29,7 +29,7 @@ function App() {
     <Router>
       <Routes>
         {/* <Route path="/" element={<Home />} /> */}
-        <Route path="/landscape" element={
+        <Route path="/" element={
             <Dashboard />
         } />
         <Route path="/home" element={<Home />} />
