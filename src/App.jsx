@@ -8,7 +8,6 @@ import {
 import ProtectedRoute from './routes/ProtectedRoute';
 import AuthRoute from './routes/AuthRoute';
 import Login from './components/Auth/Login/Login';
-import Home from './components/Home/Home';
 import Dashboard from './pages/Dashboard';
 import NotFound from './components/NotFound/NotFound';
 import SignUp from './components/Auth/SignUp/SignUp';
@@ -24,15 +23,16 @@ import ThreadPage from './pages/ThreadPage';
 import Profile from './pages/Profile';
 import VideoConferencePage from './pages/VideoCall';
 import QuizzGrammar from './pages/QuizzGrammarPage';
+import Home from './pages/Home';
 function App() {
   return (
     <Router>
       <Routes>
         {/* <Route path="/" element={<Home />} /> */}
-        <Route path="/" element={
+        <Route path="/landscape" element={
             <Dashboard />
-    
         } />
+        <Route path="/home" element={<Home />} />
         <Route path="/login" element={<AuthRoute>
             <Login />
           </AuthRoute>} />

@@ -78,9 +78,9 @@ const Landscape = () => {
         return 190 + (2.5 - scale) * 100; 
     }
     else if(scale > 1){
-      return 300; 
+      return 270; 
     } 
-    return 350;
+    return 300;
   }
 
 
@@ -124,9 +124,7 @@ const Landscape = () => {
           }} />
         ))}
 
-{waterTrails.map((style, index) => (
-        <animated.div key={index} className="water" style={style} />
-      ))}
+      
        
       </animated.div>
     </div>
