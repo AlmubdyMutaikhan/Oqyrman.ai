@@ -27,7 +27,7 @@ const FactsSlider = () => {
               commentLength={thread.commentList.length}
               body={thread.body}
               type={thread.type}
-              imageUrl={`http://localhost:8080/api/file/${thread.image?.id}`}
+              imageUrl={`http://64.226.97.233:8080/api/file/${thread.image?.id}`}
             />
           ))
       }/>

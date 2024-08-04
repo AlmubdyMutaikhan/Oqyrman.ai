@@ -16,7 +16,7 @@ const ThreadPage = ({}) => {
         const fetch = async () => {
             const t = await threadService.getThread(params.id);
             setThread(t);
-            console.log('thi is comment', t.commentList);
+            console.log('this is comment', t.commentList);
             setComments(t.commentList);
         }
 
@@ -27,8 +27,8 @@ const ThreadPage = ({}) => {
         <>
             <NavbarTop />
             <Divider />
-            <Forum title={thread?.title} imageURL={`http://localhost:8080/api/file/${thread?.image?.id}`}
-             body={thread?.body} commentList={comments}/>
+            <Forum title={thread?.title} imageURL={thread.image_url}
+             body={thread?.body} commentList={[]}/>
             <NavbarBottom />
         </>
     )

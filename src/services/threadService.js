@@ -1,4 +1,5 @@
-import axios from '../utils/axios';
+// import axios from '../utils/axios';
+import axios from 'axios';
 import useThreadStore from '../stores/useThreadStore';
 const imageUpload = async (file) => {
     const formData = new FormData();
@@ -12,14 +13,19 @@ const imageUpload = async (file) => {
     return id;
 }
 
+
+const threadURL = 'https://oqr-back-node.vercel.app'
+
 const getThreads = async () => {
-    const data = await axios.get('/thread');
+    const { data } = await axios.get(`${threadURL}/thread`);
+    console.log('this is thread data', data)
     useThreadStore.getState().setThreads(data);
 }
 
 
 const getThread = async (id) => {
-    const data = await axios.get(`/thread/${id}`);
+    const { data } = await axios.get(`${threadURL}/thread/${id}`);
+    console.log('this is a data');
     useThreadStore.getState().setThread(data);
     return data;
 }

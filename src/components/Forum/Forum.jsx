@@ -37,7 +37,8 @@ const timeAgo = (date) => {
   
 const Forum = ({ title, imageURL, body, commentList }) => {
   const [comment, setComment] = useState('');
-  const [comments, setComments] = useState([...commentList]);
+  console.log('this is comment list', commentList)
+  const [comments, setComments] = useState([]);
 
   const handleCommentChange = (event) => {
     setComment(event.target.value);

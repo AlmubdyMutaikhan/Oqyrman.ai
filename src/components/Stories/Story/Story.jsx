@@ -7,7 +7,7 @@ const Story = ({ id, label, thumbID, imageID}) => {
   const stories = [
     {
       type: "image",
-      url: `http://localhost:8080/api/file/${imageID}`,
+      url: `http://64.226.97.233:8080/api/file/${imageID}`,
       duration: 5000,
     },
   ];
@@ -21,7 +21,7 @@ const Story = ({ id, label, thumbID, imageID}) => {
         frametype="circle"
         style={{ border: "2px solid teal" }}
         width="60px"
-        src={`http://localhost:8080/api/file/${thumbID}`}
+        src={`http://64.226.97.233:8080/api/file/${thumbID}`}
         alt={label}
       />
       <div className="story-label">{label}</div>

@@ -34,7 +34,7 @@ const ThreadCatalog = () => {
             <div className="catalog-container">
                 {threads.map((thread, id) => (<div key={id} style={{marginBottom: '12px'}}> 
                         <ThreadCard onClick={() => {navigate(`/threads/${thread.id}`)}} title={thread.title} commentLength={thread.commentList.length} body={thread.body}
-                        type={thread.type} imageUrl={`http://localhost:8080/api/file/${thread.image?.id}`}/>
+                        type={thread.type} imageUrl={thread.image_url}/>
                        </div>        
                 ))}
             </div>
