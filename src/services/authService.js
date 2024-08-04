@@ -1,8 +1,15 @@
-import axios from '../utils/axios';
+// import axios from '../utils/axios';
+import axios from 'axios';
+
 import useAuthStore from '../stores/useAuthStore';
+
+const url = 'https://oqr-back-node.vercel.app';
 const login = async ({email, password}) => {
     try {
-        const { token } = await axios.post('/auth/login', { email, password });
+
+        const { data } = await axios.post(`${url}/user/login`, { email, password });
+        
+        const { token } = data;
         if (token) {
             localStorage.setItem('token', token);
             useAuthStore.getState().setAuthenticated(true);
@@ -22,7 +29,8 @@ const logout = () => {
 
 const register = async ({ email, password, name }) => {
     try {
-        const { token } = await axios.post('/auth/register', { email, password, name });
+        const { data } = await axios.post(`${url}/user/register`, { email, password, name });
+        const { token } = data;
         if (token) {
             localStorage.setItem('token', token);
             useAuthStore.getState().setAuthenticated(true);

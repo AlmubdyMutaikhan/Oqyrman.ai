@@ -13,8 +13,8 @@ const BookLevels = ({}) => {
     useEffect(() => {
         const fetch = async () => {
             const b = await bookService.getBook(params.id);
-            setBook(b[0]);
-            setUserBook(b[0]);
+            setBook(b);
+            setUserBook(b);
         }
         fetch();
     }, [params.id, setBook]);
@@ -31,7 +31,7 @@ const BookLevels = ({}) => {
                     difficulty={book?.difficulty}
                     rating={book?.rating}
                     time={book?.chapter_number * (Math.ceil(Math.random() * 4))}
-                    title={book?.book_name?.slice(0, -4)}
+                    title={book?.metadata?.name.slice(0, -4)}
                 />
             }
             <NavbarBottom />

@@ -12,10 +12,9 @@ const QuizzPage = () => {
 
     useEffect(() => {
       const fetch = async () => {
-          const b = await bookService.getBook(params.id);
-          setUserBook(b[0]);
-          console.log('this is b', b[0]);
-          console.log(b[0].questions);
+          const b = await bookService.getBookQuizz(params.id);
+          console.log('this is quiz aaa', b.quiz);
+          setUserBook(b.quiz);
       }
       fetch();
   }, [params.id]);
@@ -25,7 +24,7 @@ const QuizzPage = () => {
         <>
             <NavbarTop />
             <Divider />
-            <QuizPage title={book?.book_name?.slice(0, -4)} quizData={book && book?.questions}/>
+            <QuizPage title={'Test'} quizData={book}/>
             <NavbarBottom />
         </>
     )

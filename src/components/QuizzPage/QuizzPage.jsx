@@ -7,6 +7,7 @@ const QuizPage = ({ title, quizData = [{}] }) => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedOption, setSelectedOption] = useState(null);
 
+  console.log('q dat', quizData);
   const currentQuestion = quizData[currentQuestionIndex];
 
   const handleOptionSelect = (option) => {
@@ -36,10 +37,10 @@ const QuizPage = ({ title, quizData = [{}] }) => {
         <div className="question-count">
           <span>{t('questions')} {currentQuestionIndex + 1}</span>/{quizData.length}
         </div>
-        <div className="question-text">{currentQuestion.name}</div>
+        <div className="question-text">{currentQuestion?.question}</div>
       </div>
 
-      {currentQuestion.image && (
+      {currentQuestion?.image && (
         <div className="question-image">
           <img src={'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/947e6e67382443.5b37b0d1f20d9.jpg'} alt="Quiz Illustration" />
         </div>
