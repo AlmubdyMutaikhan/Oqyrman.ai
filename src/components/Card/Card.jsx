@@ -4,7 +4,9 @@ import { faClock, faTrophy } from '@fortawesome/free-solid-svg-icons';
 import './Card.scss';
 import { useNavigate } from 'react-router-dom';
 
-const BookCard = ({ style, title = 'Title', id=105, author = 'Author', time = '15', rating=Math.ceil(Math.random()*10), imageUrl='https://avatars.mds.yandex.net/i?id=b07cfbab48c62153707177cbccc1e96eb7836ae2-7455892-images-thumbs&n=13' }) => {
+const BookCard = ({ style, title = 'Title', id=105, author = 'Author', time = '15', rating=Math.ceil(Math.random()*10), 
+  imageUrl='https://avatars.mds.yandex.net/i?id=b07cfbab48c62153707177cbccc1e96eb7836ae2-7455892-images-thumbs&n=13'
+ }) => {
 
 const navigate = useNavigate();
 return (
@@ -15,8 +17,8 @@ return (
         <p className="book-author">{author}</p>
         <div className="book-meta">
             <div><FontAwesomeIcon style={{marginRight: '4px'}} icon={faClock} /> <span style={{fontWeight:'bold'}}>{time} min</span></div>
-            <div><FontAwesomeIcon style={{color:'goldenrod', marginRight: '4px'}} icon={faTrophy} /><span style={{fontWeight:'bold'}}>{Math.ceil(Math.random()*5) + 9}</span></div>
-         
+            <div><FontAwesomeIcon style={{color:'goldenrod', marginRight: '4px'}} icon={faTrophy} /><span style={{fontWeight:'bold'}}>
+              {Math.ceil(Math.random()*5) + 9}</span></div>
         </div>
       </div>
     </div>

@@ -1,0 +1,149 @@
+.reading-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    height: calc(100vh - 100px); // Adjust height to account for bottom navbar
+    scroll-snap-type: y mandatory;
+  }
+  
+  .header {
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    z-index: 1001;
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+    transition: top 0.3s;
+  }
+
+  .whatsapp-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #25D366;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+  
+  .whatsapp-button:hover {
+    background-color: #1DA851;
+  }
+  
+  
+  .header.hidden {
+    top: -100px; // Adjust this value based on the height of your header
+  }
+  
+  .header.visible {
+    top: 0;
+  }
+  
+  .title {
+    margin: 0;
+    font-size: 24px;
+  }
+  
+  .tabs {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+  .tab {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .tab.active {
+    background-color: #4caf50;
+    color: #fff;
+  }
+  
+  .progress-bar {
+    position: fixed;
+    top: 58px;
+    left: 0;
+    height: 5px;
+    background-color: #4caf50;
+    z-index: 1000;
+  }
+  
+  .content {
+    padding: 20px;
+  }
+  
+  .page {
+    scroll-snap-align: start;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #f0f8ff;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .text-content {
+    cursor: pointer;
+    line-height: 1.8;
+    font-size: 20px;
+    color: #333;
+    text-align: left;
+    font-family: 'Comic Sans MS', sans-serif;
+    margin-bottom: 20px;
+  }
+  
+  .page-image {
+    width: 80%;
+    max-width: 400px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+  }
+  
+  .word {
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .word.selected {
+    padding: 2px 4px;
+    border-radius: 4px;
+    background-color: #ffb6c1;
+    color: white;
+  }
+  
+  .word:hover {
+    background-color: #add8e6;
+    border-radius: 4px;
+  }
+  
+  .knowledge-check-button {
+    padding: 10px 20px;
+    margin: 20px 0;
+    border: none;
+    background-color: #4caf50;
+    color: white;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+  }
+  
+  .knowledge-check-button:hover {
+    background-color: #45a049;
+  }
+  
+  .audio-content {
+    padding: 20px;
+    text-align: center;
+  }
+  

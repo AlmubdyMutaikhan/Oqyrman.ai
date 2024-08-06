@@ -6,9 +6,9 @@ import { useTranslation } from 'react-i18next';
 import authService from '../../services/authService';
 import { useNavigate } from 'react-router-dom';
 const userData = {
-    name: 'Әлмубди',
+    name: 'Оқырман',
     profilePic: 'https://avatars.mds.yandex.net/i?id=ebffcf4f7ae93c553bb1cb5aa118de6804e2b773-9106968-images-thumbs&n=13', // replace with path to user's profile pic
-    role: 'ЖОО Студенті',
+    role: 'Қолданушы',
 
   };
   
