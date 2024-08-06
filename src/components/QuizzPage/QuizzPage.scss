@@ -68,3 +68,6 @@
     margin-top: 12px;
   }
   
+  .custom-toast-container .Toastify__toast {
+    z-index: 100000;
+  }

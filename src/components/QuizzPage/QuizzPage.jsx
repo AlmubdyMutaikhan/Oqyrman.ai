@@ -1,41 +1,54 @@
-import React, { useState, useTransition } from 'react';
+import React, { useState } from 'react';
 import './QuizzPage.scss'; // Your custom CSS file for styling
 import { useTranslation } from 'react-i18next';
 import { toast } from 'react-toastify';
+import Modal from '../Modal/Modal'; // Import your Modal component
+import { useNavigate } from 'react-router-dom';
 
 const QuizPage = ({ title, quizData = [{}] }) => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedOption, setSelectedOption] = useState(null);
+  const [score, setScore] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  console.log('q dat', quizData);
   const currentQuestion = quizData[currentQuestionIndex];
 
   const handleOptionSelect = (option) => {
     setSelectedOption(option);
-    // Additional logic for when an option is selected
   };
 
   const handleSubmitAnswer = () => {
-    // Logic to handle the submission of the selected answer
-    // Could check if answer is correct, provide feedback, etc.
-    // Move to the next question
-    if(currentQuestionIndex < 4) {
-      setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
-    setSelectedOption(null); // Reset the selection for the next question
-    } else {
-      toast.success(t('successAnswer'))
+    if (selectedOption) {
+      if (selectedOption.name === currentQuestion.correctAnswer) {
+        setScore(score + 1);
+        toast.success('Бәрекелді, жарайсың!');
+      } else {
+        toast.error('Упс, жауап дұрыс емес...');
+      }
     }
-   
-   
+
+    if (currentQuestionIndex < quizData.length - 1) {
+      setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
+      setSelectedOption(null); // Reset the selection for the next question
+    } else {
+      setIsModalOpen(true);
+    }
   };
 
-  const {t} = useTranslation();
+  const navigate = useNavigate();
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    navigate('/books/1')
+  };
+
+  const { t } = useTranslation();
   return (
     <div className="quiz-page">
-      <h2 style={{color:'black'}}>{title}</h2>
+      <h2 style={{ color: 'black' }}>{title}</h2>
       <div className="question-section">
         <div className="question-count">
-          <span>{t('questions')} {currentQuestionIndex + 1}</span>/{quizData.length}
+          <span>Сұрақтар {currentQuestionIndex + 1}</span>/{quizData.length}
         </div>
         <div className="question-text">{currentQuestion?.question}</div>
       </div>
@@ -50,7 +63,7 @@ const QuizPage = ({ title, quizData = [{}] }) => {
         {currentQuestion?.options?.length > 2 &&
           currentQuestion?.options.map((option) => (
             <button
-              key={option}
+              key={option.id}
               onClick={() => handleOptionSelect(option)}
               className={`option-button ${selectedOption === option ? 'selected' : ''}`}
             >
@@ -58,13 +71,13 @@ const QuizPage = ({ title, quizData = [{}] }) => {
             </button>
           ))}
 
-        {currentQuestion?.options?.length <=2 && (
+        {currentQuestion?.options?.length <= 2 && (
           <>
             <button onClick={() => handleOptionSelect('True')} className="true-false-button">
               {t('true')}
             </button>
             <button onClick={() => handleOptionSelect('False')} className="true-false-button">
-            {t('false')}
+              {t('false')}
             </button>
           </>
         )}
@@ -73,6 +86,14 @@ const QuizPage = ({ title, quizData = [{}] }) => {
       <button onClick={handleSubmitAnswer} className="submit-button">
         {t('answer')}
       </button>
+
+      {isModalOpen && (
+        <Modal isOpen={isModalOpen} onClose={handleCloseModal}
+          translation={`Ұпай саны ${score} / ${quizData.length}`}
+          description={'Жаңа сұрақтарға жауап беру үшін қайта Кітап соңындағы "Тапсырмаларға көшу" батырмасын бас'}
+        >
+        </Modal>
+      )}
     </div>
   );
 };

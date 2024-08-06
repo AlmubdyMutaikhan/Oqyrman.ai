@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './ReadingPage.scss'; // Make sure to create this CSS file
 import Modal from '../Modal/Modal';
+import { useNavigate } from 'react-router-dom';
 
 const ReadingPage = ({ text, images, title }) => {
   const [selectedWord, setSelectedWord] = useState('');
@@ -43,6 +44,8 @@ const ReadingPage = ({ text, images, title }) => {
     };
   }, []);
 
+  const navigate = useNavigate();
+
   const handleWordClick = (word) => {
     setSelectedWord(word);
     const translatedWord = translateWord(word);
@@ -67,7 +70,7 @@ const ReadingPage = ({ text, images, title }) => {
   };
 
   const handleKnowledgeCheck = () => {
-    alert('Сайтқа өту');
+    navigate('/book/1/quizz')
   };
 
   return (
