@@ -42,7 +42,7 @@ const GamePage = () => {
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(true)}
         translation={'Маңызды !'}
-        description={'Ойыннан керемет әсер алу үшін, телефонды көлденең ұстаңыз'}
+        description={'Ойыннан керемет әсер алу үшін, телефонды көлденең ұстаңыз. Кейіпкерлерді тыңдау үшін, телефонның дауысын қосып ойнаңыз.'}
         isGame
       />
       <iframe
