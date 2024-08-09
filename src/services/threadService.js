@@ -15,6 +15,7 @@ const imageUpload = async (file) => {
 
 
 const threadURL = 'https://oqr-back-node.vercel.app'
+// const threadURL = 'http://localhost:3000'
 
 const getThreads = async () => {
     const { data } = await axios.get(`${threadURL}/thread`);

@@ -3,7 +3,8 @@ import { animated, useSpring, useTrail } from '@react-spring/web';
 import './Landscape.scss';
 import LandscapeElementInformation from "./LandscapeElementInformation.jsx";
 import useSound from 'use-sound'
-import modal_window_opening from '../../assets/audio/modal_window_opening.wav'
+import modal_window_opening from '../../assets/audio/open.wav'
+import { toast } from 'react-toastify';
 const Landscape = () => {
   const [hoverInfo, setHoverInfo] = useState(null);
   const [boyPosition, setBoyPosition] = useSpring(() => ({ x: 0, bottom: 250 })); // Initial position of the boy
@@ -70,9 +71,13 @@ const Landscape = () => {
   }
 
   const elementInformations = [
-    {title: 'Бұлт', description: 'Сәлем! Мен жұмбақ бұлтпын. Білесің бе, мен қайдан келемін? Күн сәулесі суды буландырып, аспанға көтерілгенде, біз пайда боламыз!', isLink: false},
-    {title: 'Ағаш', description: 'Сәлем! Мен сиқырлы ағашпын. Білесің бе, мен қалай өсемін? Күн сәулесі және жерден алынған су біздің өсуімізге көмектеседі. Біз ауадағы көмірқышқыл газын тазалап, оттегі береміз.', isLink: false},
-    {title: 'Кигіз үй', description: 'Киіз үй — бұл қазақ халқының дәстүрлі көшпелі тұрғынының үйі, ол өзінің құрылысының ыңғайлылығы және экологиялық тазалығы жағынан ерекше', isLink: true, link:'https://danqzq.github.io/oqyrman-ai-web-build/'}
+    {title: 'Бұлт', description: 'Сәлем! Мен жұмбақ бұлтпын. Білесің бе, мен қайдан келемін? Күн сәулесі суды буландырып, аспанға көтерілгенде, біз пайда боламыз!', 
+      isLink: false},
+    {title: 'Ағаш', description: 'Сәлем! Мен сиқырлы ағашпын. Білесің бе, мен қалай өсемін? Күн сәулесі және жерден алынған су біздің өсуімізге көмектеседі. Біз ауадағы көмірқышқыл газын тазалап, оттегі береміз.',
+       isLink: false},
+    {title: 'Кигіз үй', description: 'Киіз үй — бұл қазақ халқының дәстүрлі көшпелі тұрғынының үйі, ол өзінің құрылысының ыңғайлылығы және экологиялық тазалығы жағынан ерекше', 
+      isLink: false
+    }
   ]
 
   const yurts = [
@@ -80,6 +85,7 @@ const Landscape = () => {
     { id: 2, xOffset: 40, scale: 1.5, zIndex: 200 },
   ];
 
+  const [first, setFirst] = useState(false);
 
   const [playsfx_modal_window_opening] = useSound(modal_window_opening)
   const handleMouseEnter = (info, x, scale) => {
@@ -93,6 +99,11 @@ const Landscape = () => {
     
     }
 
+    if(!first) {
+      setFirst(true)
+      toast.warn('Бета нұсқаға көп обьектілер еңгізілмеген. Алдағы уақытта толық нұсқаны күтіңіз.')
+    }
+    
   };
 
   const handleMouseLeave = () => {

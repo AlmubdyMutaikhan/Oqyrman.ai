@@ -1,0 +1,16 @@
+.game-page {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000; // Optional: set a background color
+  }
+  
+  .game-iframe {
+    width: 100vw;
+    height: 100vh;
+    border: none;
+    overflow: hidden;
+  }
+  

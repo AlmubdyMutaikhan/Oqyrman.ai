@@ -82,13 +82,13 @@ const ReadingPage = ({ text, images, title }) => {
             className={`tab ${selectedTab === 'reading' ? 'active' : ''}`}
             onClick={() => handleTabClick('reading')}
           >
-            Reading
+            Оқылым
           </button>
           <button
             className={`tab ${selectedTab === 'audio' ? 'active' : ''}`}
             onClick={() => handleTabClick('audio')}
           >
-            Audio
+            Тыңдалым
           </button>
         </div>
       </div>
@@ -111,7 +111,7 @@ const ReadingPage = ({ text, images, title }) => {
               {images[index] && <img src={images[index]} alt="Illustration" className="page-image" />}
             </div>
           ))}
-          <div className="page">
+          <div className="page page-last">
             <div className="text-content">
               <p>Ал енді ертегі бойынша өз біліміңді Жасанды интеллект құрастырған қызықты сұрақтар арқылы тексеріп, 
                 ертегі бойынша ойын ойнауды ұтып ал!
@@ -127,7 +127,7 @@ const ReadingPage = ({ text, images, title }) => {
       {selectedTab === 'audio' && (
         <div className="audio-content">
           <p>Аудио бета-версияға қосылмаған. Толық контентті алу үшін бізге жазыңыз</p>
-          <a href="https://wa.me/77002883179" className="whatsapp-button">Whatsapp-қа жазыңыз</a>
+          <a href="https://www.instagram.com/oqyrman.ai/" className="whatsapp-button">Бізге инстаграмға жазыңыз</a>
         </div>
       )}
       <Modal

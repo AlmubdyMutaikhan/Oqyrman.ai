@@ -24,6 +24,7 @@ import Profile from './pages/Profile';
 import VideoConferencePage from './pages/VideoCall';
 import QuizzGrammar from './pages/QuizzGrammarPage';
 import Home from './pages/Home';
+import GamePage from './components/GamePage/GamePage';
 function App() {
   return (
     <Router>
@@ -64,6 +65,12 @@ function App() {
   <Route path="/book/:id/learn" element={
           <ProtectedRoute>
             <LearningPage />
+          </ProtectedRoute>
+        } />
+
+<Route path="/games/asan-usen" element={
+          <ProtectedRoute>
+            <GamePage />
           </ProtectedRoute>
         } />
 

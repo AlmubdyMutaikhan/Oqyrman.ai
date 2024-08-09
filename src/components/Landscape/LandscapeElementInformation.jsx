@@ -8,7 +8,7 @@ const LandscapeElementInformation = (props) => {
             <p className={'info-description'}>
                 {props.info.description}
             </p>
-            <a href={props.link} className='info-link'>Өту</a>
+            {props.isLink && <a href={props.link} className='info-link'>Өту</a> }
         </div>
     );
 };

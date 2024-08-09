@@ -38,11 +38,11 @@ const ThreadCatalog = () => {
                        </div>        
                 ))}
             </div>
-            <div className="thread-form__new">
+            {/* <div className="thread-form__new">
                 <Link to="/threads/new" >
                     <FontAwesomeIcon className="thread-new-icon" style={{marginRight: '4px'}} icon={faPencil} />
                 </Link>
-            </div>
+            </div> */}
         </div>
     )
 }

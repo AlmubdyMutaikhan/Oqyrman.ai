@@ -1,7 +1,7 @@
 import React from 'react';
 import './Modal.scss'; // This will be your CSS file
 
-const Modal = ({ isOpen, onClose, translation, description }) => {
+const Modal = ({ isOpen, onClose, translation, description, isGame=false }) => {
   if (!isOpen) return null;
 
   return (
@@ -11,6 +11,7 @@ const Modal = ({ isOpen, onClose, translation, description }) => {
           <p className="translation">{translation}</p>
           <p className="description">{description}</p>
           <button className="modal-close" onClick={onClose}>OK</button>
+          {isGame && <img src='https://coppmo.ru/wp-content/uploads/2022/02/giphy.gif' height={200} width={200} /> }
         </div>
       </div>
     </div>

@@ -16,11 +16,11 @@ const LevelsTable = ({ title = 'Loading...', id = 52, difficulty = 'EASY', ratin
 
   const handleModalClose = () => {
     setShowModal(false);
-    navigate('/'); // Redirect or any other action you want to take
+    navigate('/bookshelf'); // Redirect or any other action you want to take
   };
 
   const handleWhatsAppClick = () => {
-    window.open('https://wa.me/77002883179', '_blank');
+    window.open("https://www.instagram.com/oqyrman.ai/", '_blank');
   };
 
   return (
@@ -28,8 +28,8 @@ const LevelsTable = ({ title = 'Loading...', id = 52, difficulty = 'EASY', ratin
       {showModal && (
         <div className="modal">
           <div className="modal-content">
-            <p>Бета-версияда бұл ертегі қолжетімді емес. Толық нұсқасын алу үшін бізге ватсапқа жазыңыз.</p>
-            <button onClick={handleWhatsAppClick}>WhatsApp</button>
+            <p>Бета-версияда бұл ертегі қолжетімді емес. Толық нұсқасын алу үшін бізге Instagram парақшамызға жазыңыз.</p>
+            <button onClick={handleWhatsAppClick}>Instagram</button>
             <button onClick={handleModalClose}>Жабу</button>
           </div>
         </div>

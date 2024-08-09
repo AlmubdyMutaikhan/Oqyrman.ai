@@ -6,6 +6,8 @@ import NavbarTop from "../components/Navbar/NavbarTop/NavbarTop"
 import QuizPage from "../components/QuizzPage/QuizzPage";
 import { useEffect, useState } from "react";
 import bookService from "../services/bookService";
+import { toast } from "react-toastify";
+import Modal from "../components/Modal/Modal";
 const QuizzPage = () => {
   const params = useParams();
   const [book, setUserBook] = useState({});
@@ -243,14 +245,18 @@ const QuizzPage = () => {
     }
 ]
 
+const [isModalOpen, setIsModalOpen] = useState(true);
+
     useEffect(() => {
       const fetch = async () => {
           const b = await bookService.getBookQuizz(params.id);
-          console.log('this is quiz aaa', b.quiz);
           setUserBook(asanQuizz);
       }
       fetch();
   }, [params.id]);
+
+
+
 
 
     return (
@@ -258,6 +264,12 @@ const QuizzPage = () => {
             <NavbarTop />
             <Divider />
             <QuizPage title={'Біліміңді тексер'} quizData={book}/>
+            <Modal
+                isOpen={isModalOpen}
+                onClose={() => {setIsModalOpen(false)}}
+                translation={'Маңызды !'}
+                description={'Егер сіз тесттен кемінде 7 ұпай жинасаңыз, сізге ойын бөлімі ашылады'}
+            />
             <NavbarBottom />
         </>
     )

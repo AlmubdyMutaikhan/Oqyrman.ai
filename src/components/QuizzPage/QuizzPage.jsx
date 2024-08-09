@@ -17,6 +17,14 @@ const QuizPage = ({ title, quizData = [{}] }) => {
     setSelectedOption(option);
   };
 
+  const handlePlayAudio = (audioLink) => {
+    console.log('section audio link', audioLink)
+    const audio = new Audio(audioLink);
+    audio.play().catch((error) => {
+      console.error('Audio playback failed:', error);
+    });
+  };
+
   const handleSubmitAnswer = () => {
     if (selectedOption) {
       if (selectedOption.name === currentQuestion.correctAnswer) {
@@ -31,15 +39,27 @@ const QuizPage = ({ title, quizData = [{}] }) => {
       setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
       setSelectedOption(null); // Reset the selection for the next question
     } else {
+      if(score > 6) {
+        handlePlayAudio('https://firebasestorage.googleapis.com/v0/b/bee-volunteers.appspot.com/o/win.wav?alt=media&token=0b1886e2-14f9-47d7-93f6-c7a80a42df7d')
+      } else {
+        handlePlayAudio('https://firebasestorage.googleapis.com/v0/b/bee-volunteers.appspot.com/o/lose.wav?alt=media&token=89e6ee6a-4355-4932-b61f-f9c74cef8a04')
+      }
       setIsModalOpen(true);
     }
   };
 
   const navigate = useNavigate();
 
+
+
   const handleCloseModal = () => {
     setIsModalOpen(false);
-    navigate('/books/1')
+    if(score > 6) {
+      navigate('/games/asan-usen')
+    } else {
+    
+      navigate('/books/1')
+    }
   };
 
   const { t } = useTranslation();
@@ -90,7 +110,7 @@ const QuizPage = ({ title, quizData = [{}] }) => {
       {isModalOpen && (
         <Modal isOpen={isModalOpen} onClose={handleCloseModal}
           translation={`Ұпай саны ${score} / ${quizData.length}`}
-          description={'Жаңа сұрақтарға жауап беру үшін қайта Кітап соңындағы "Тапсырмаларға көшу" батырмасын бас'}
+          description={score > 6 ? 'Алақай, ойынға өту үшін \'Ок\' батырмасын бас' : 'Ойынға өту үшін қайтадан ертегіні оқып шық. Сәттілік :)'}
         >
         </Modal>
       )}
