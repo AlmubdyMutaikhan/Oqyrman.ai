@@ -133,8 +133,8 @@ const ReadingPage = ({ text, images, title }) => {
       <Modal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
-        translation={translation}
-        description={description}
+        translation={'Аударма'}
+        description={'Толық нұсқада сөздің аудармасы мен мағынасы болады. Бета нұсқасында бұл функция еңгізілмеген.'}
       />
     </div>
   );
