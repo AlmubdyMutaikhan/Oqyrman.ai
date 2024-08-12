@@ -37,9 +37,7 @@ function App() {
         <Route path="/login" element={<AuthRoute>
             <Login />
           </AuthRoute>} />
-        <Route path="/signup" element={<AuthRoute>
-            <SignUp />
-          </AuthRoute>} />
+       
         <Route path="/bookshelf" element={
           <ProtectedRoute>
             <BookShelf />
