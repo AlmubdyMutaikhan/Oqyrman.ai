@@ -67,9 +67,7 @@ function App() {
         } />
 
 <Route path="/games/asan-usen" element={
-          <ProtectedRoute>
             <GamePage />
-          </ProtectedRoute>
         } />
 
       <Route path="/books/:id" element={
