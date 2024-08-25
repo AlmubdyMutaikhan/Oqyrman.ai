@@ -39,7 +39,7 @@ const QuizPage = ({ title, quizData = [{}] }) => {
       setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
       setSelectedOption(null); // Reset the selection for the next question
     } else {
-      if(score > 6) {
+      if(score > -1) {
         handlePlayAudio('https://firebasestorage.googleapis.com/v0/b/bee-volunteers.appspot.com/o/win.wav?alt=media&token=0b1886e2-14f9-47d7-93f6-c7a80a42df7d')
       } else {
         handlePlayAudio('https://firebasestorage.googleapis.com/v0/b/bee-volunteers.appspot.com/o/lose.wav?alt=media&token=89e6ee6a-4355-4932-b61f-f9c74cef8a04')

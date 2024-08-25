@@ -117,7 +117,6 @@ const ReadingPage = ({ text, images, title }) => {
                 ертегі бойынша ойын ойнауды ұтып ал!
               </p>
             </div>
-            <img src="https://firebasestorage.googleapis.com/v0/b/bee-volunteers.appspot.com/o/DALL%C2%B7E%202024-08-06%2020.32.15%20-%20A%20vibrant%20and%20engaging%20illustration%20showing%20a%20kid%20joyfully%20reading%20a%20book%20and%20doing%20some%20reading%20work.%20The%20scene%20features%20a%20cheerful%20child%2C%20surrounded.webp?alt=media&token=3a6f2ef8-6196-4c98-9437-91a0fd42a0b8" alt="Placeholder" className="page-image" />
             <button className="knowledge-check-button" onClick={handleKnowledgeCheck}>
                 Тапсырмаларға көшу
             </button>
